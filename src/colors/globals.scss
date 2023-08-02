@@ -1,0 +1,64 @@
+/* Vue Transition */
+.fade-enter-active,
+.fade-leave-active {
+  transition:all 0.4s;
+}
+.fade-enter,
+.fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity:0;
+}
+.fade-up-enter-active,
+.fade-up-leave-active {
+  transition:all 0.4s;
+}
+.fade-up-enter,
+.fade-up-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity:0;
+  transform:translateY(10px);
+}
+.fade-down-enter-active,
+.fade-down-leave-active {
+  transition:all 0.4s;
+}
+.fade-down-enter,
+.fade-down-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity:0;
+  transform:translateY(-10px);
+}
+.fade-left-enter-active,
+.fade-left-leave-active {
+  transition:all 0.4s;
+}
+.fade-left-enter,
+.fade-left-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity:0;
+  transform:translateX(10px);
+}
+.fade-right-enter-active,
+.fade-right-leave-active {
+  transition:all 0.4s;
+}
+.fade-right-enter,
+.fade-right-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity:0;
+  transform:translateX(-10px);
+}
+.autoheight-enter-active,
+.autoheight-leave-active {
+  overflow:hidden;
+  transition:all 0.2s;
+  max-height:9999px;
+}
+.autoheight-enter,
+.autoheight-leave-to /* .autoheight-leave-active below version 2.1.8 */ {
+  opacity:0;
+  max-height:0;
+}
+.bounce-enter-active,
+.bounce-leave-active {
+  transition:all 0.1s;
+}
+.bounce-enter,
+.bounce-leave-to /* .bounce-leave-active below version 2.1.8 */ {
+  transform:scale(1.2)
+}

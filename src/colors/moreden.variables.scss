@@ -1,0 +1,32 @@
+@import "./colors.scss";
+@import "./moreden.colors.scss";
+
+:root{
+  @each $key, $value in $gray {
+    --gray-#{$key} : #{$value};
+  }
+  @each $key, $value in $deep-purple {
+    --deep-purple-#{$key} : #{$value};
+  }
+  @each $key, $value in $blue-gray {
+    --blue-gray-#{$key} : #{$value};
+  }
+  @each $key, $value in $red {
+    --red-#{$key} : #{$value};
+  }
+  @each $key, $value in $green {
+    --green-#{$key} : #{$value};
+  }
+  @each $key, $value in $teal {
+    --teal-#{$key} : #{$value};
+  }
+  @each $key, $value in $pink {
+    --pink-#{$key} : #{$value};
+  }
+  @each $key, $value in $yellow {
+    --yellow-#{$key} : #{$value};
+  }
+  @each $key, $value in $light-green {
+    --light-green-#{$key} : #{$value};
+  }
+}

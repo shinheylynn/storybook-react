@@ -1,0 +1,215 @@
+@import './colors.scss';
+@import './medistream.colors.scss';
+
+$primary: (
+  'base': map-get($deep-orange, 500),
+  'lighten-5': map-get($deep-orange, 50),
+  'lighten-4': map-get($deep-orange, 100),
+  'lighten-3': map-get($deep-orange, 200),
+  'lighten-2': map-get($deep-orange, 300),
+  'lighten-1': map-get($deep-orange, 400),
+  'darken-1': map-get($deep-orange, 600),
+  'darken-2': map-get($deep-orange, 700),
+  'darken-3': map-get($deep-orange, 800),
+  'darken-4': map-get($deep-orange, 900),
+  'accent-1': map-get($deep-orange, A100),
+  'accent-2': map-get($deep-orange, A200),
+  'accent-3': map-get($deep-orange, A300),
+  'accent-4': map-get($deep-orange, A300)
+);
+
+$secondary: (
+  'base': map-get($indigo, 500),
+  'lighten-5': map-get($indigo, 50),
+  'lighten-4': map-get($indigo, 100),
+  'lighten-3': map-get($indigo, 200),
+  'lighten-2': map-get($indigo, 300),
+  'lighten-1': map-get($indigo, 400),
+  'darken-1': map-get($indigo, 600),
+  'darken-2': map-get($indigo, 700),
+  'darken-3': map-get($indigo, 800),
+  'darken-4': map-get($indigo, 900),
+  'accent-1': map-get($indigo, A100),
+  'accent-2': map-get($indigo, A200),
+  'accent-3': map-get($indigo, A300),
+  'accent-4': map-get($indigo, A300)
+);
+
+$warning: (
+  'base': map-get($orange, 500),
+  'lighten-5': map-get($orange, 50),
+  'lighten-4': map-get($orange, 100),
+  'lighten-3': map-get($orange, 200),
+  'lighten-2': map-get($orange, 300),
+  'lighten-1': map-get($orange, 400),
+  'darken-1': map-get($orange, 600),
+  'darken-2': map-get($orange, 700),
+  'darken-3': map-get($orange, 800),
+  'darken-4': map-get($orange, 900),
+  'accent-1': map-get($orange, A100),
+  'accent-2': map-get($orange, A200),
+  'accent-3': map-get($orange, A300),
+  'accent-4': map-get($orange, A300)
+);
+
+$error: (
+  'base': map-get($red, 500),
+  'lighten-5': map-get($red, 50),
+  'lighten-4': map-get($red, 100),
+  'lighten-3': map-get($red, 200),
+  'lighten-2': map-get($red, 300),
+  'lighten-1': map-get($red, 400),
+  'darken-1': map-get($red, 600),
+  'darken-2': map-get($red, 700),
+  'darken-3': map-get($red, 800),
+  'darken-4': map-get($red, 900),
+  'accent-1': map-get($red, A100),
+  'accent-2': map-get($red, A200),
+  'accent-3': map-get($red, A300),
+  'accent-4': map-get($red, A300)
+);
+
+$info: (
+  'base': map-get($blue, 500),
+  'lighten-5': map-get($blue, 50),
+  'lighten-4': map-get($blue, 100),
+  'lighten-3': map-get($blue, 200),
+  'lighten-2': map-get($blue, 300),
+  'lighten-1': map-get($blue, 400),
+  'darken-1': map-get($blue, 600),
+  'darken-2': map-get($blue, 700),
+  'darken-3': map-get($blue, 800),
+  'darken-4': map-get($blue, 900),
+  'accent-1': map-get($blue, A100),
+  'accent-2': map-get($blue, A200),
+  'accent-3': map-get($blue, A300),
+  'accent-4': map-get($blue, A300)
+);
+
+$accent: (
+  'base': map-get($teal, 500),
+  'lighten-5': map-get($teal, 50),
+  'lighten-4': map-get($teal, 100),
+  'lighten-3': map-get($teal, 200),
+  'lighten-2': map-get($teal, 300),
+  'lighten-1': map-get($teal, 400),
+  'darken-1': map-get($teal, 600),
+  'darken-2': map-get($teal, 700),
+  'darken-3': map-get($teal, 800),
+  'darken-4': map-get($teal, 900),
+  'accent-1': map-get($teal, A100),
+  'accent-2': map-get($teal, A200),
+  'accent-3': map-get($teal, A300),
+  'accent-4': map-get($teal, A300)
+);
+
+$success: (
+  'base': map-get($green, 500),
+  'lighten-5': map-get($green, 50),
+  'lighten-4': map-get($green, 100),
+  'lighten-3': map-get($green, 200),
+  'lighten-2': map-get($green, 300),
+  'lighten-1': map-get($green, 400),
+  'darken-1': map-get($green, 600),
+  'darken-2': map-get($green, 700),
+  'darken-3': map-get($green, 800),
+  'darken-4': map-get($green, 900),
+  'accent-1': map-get($green, A100),
+  'accent-2': map-get($green, A200),
+  'accent-3': map-get($green, A300),
+  'accent-4': map-get($green, A300)
+);
+
+:root {
+  @each $key, $value in $red {
+    --red-#{$key}: #{$value};
+  }
+  @each $key, $value in $indigo {
+    --indigo-#{$key}: #{$value};
+  }
+  @each $key, $value in $blue {
+    --blue-#{$key}: #{$value};
+  }
+  @each $key, $value in $teal {
+    --teal-#{$key}: #{$value};
+  }
+  @each $key, $value in $green {
+    --green-#{$key}: #{$value};
+  }
+  @each $key, $value in $deep-orange {
+    --deep-orange-#{$key}: #{$value};
+  }
+  @each $key, $value in $blue-grey {
+    --blue-grey-#{$key}: #{$value};
+  }
+}
+
+:root {
+  --white: #fff;
+  --black: #000;
+}
+
+// 추상화 변수 (텍스트, 배경, 테두리)
+:root {
+  // 에디터 색상 팔레트
+  --editor-text-primary1: var(--blue-grey-50);
+  --editor-text-primary2: var(--blue-grey-400);
+  --editor-text-primary3: var(--blue-grey-900);
+  --editor-text-purple1: var(--indigo-100);
+  --editor-text-purple2: var(--indigo-400);
+  --editor-text-purple3: var(--indigo-900);
+  --editor-text-blue1: var(--blue-100);
+  --editor-text-blue2: var(--blue-600);
+  --editor-text-blue3: var(--blue-900);
+  --editor-text-teal1: var(--teal-100);
+  --editor-text-teal2: var(--teal-500);
+  --editor-text-teal3: var(--teal-900);
+  --editor-text-orange1: var(--deep-orange-50);
+  --editor-text-orange2: var(--deep-orange-200);
+  --editor-text-orange3: var(--deep-orange-400);
+  --editor-text-red1: var(--red-100);
+  --editor-text-red2: var(--red-400);
+  --editor-text-red3: var(--red-900);
+  --editor-text-bg-blue: var(--blue-50);
+  --editor-text-bg-cyan: var(--indigo-50);
+  --editor-text-bg-green: var(--teal-50);
+  --editor-text-bg-orange: var(--deep-orange-50);
+  --editor-text-bg-red: var(--red-50);
+  --editor-cell-bg-primary1: var(--white);
+  --editor-cell-bg-primary2: var(--blue-grey-50);
+  --editor-cell-bg-primary3: var(--blue-grey-400);
+  --editor-cell-bg-blue1: var(--blue-50);
+  --editor-cell-bg-blue2: var(--blue-200);
+  --editor-cell-bg-blue3: var(--blue-600);
+  --editor-cell-bg-teal1: var(--teal-50);
+  --editor-cell-bg-teal2: var(--teal-200);
+  --editor-cell-bg-teal3: var(--teal-300);
+  --editor-cell-bg-orange1: var(--deep-orange-50);
+  --editor-cell-bg-orange2: var(--deep-orange-100);
+  --editor-cell-bg-orange3: var(--deep-orange-300);
+  --editor-cell-bg-red1: var(--red-50);
+  --editor-cell-bg-red2: var(--red-100);
+  --editor-cell-bg-red3: var(--red-300);
+  .dark-theme {
+    --editor-text-bg-blue: var(--blue-900);
+    --editor-text-bg-cyan: var(--indigo-900);
+    --editor-text-bg-green: var(--teal-900);
+    --editor-text-bg-orange: var(--deep-orange-900);
+    --editor-text-bg-red: var(--red-900);
+    --editor-cell-bg-primary1: var(--black);
+    --editor-cell-bg-primary2: var(--blue-grey-700);
+    --editor-cell-bg-primary3: var(--white);
+    --editor-cell-bg-blue1: var(--blue-900);
+    --editor-cell-bg-blue2: var(--blue-600);
+    --editor-cell-bg-blue3: var(--blue-500);
+    --editor-cell-bg-teal1: var(--teal-900);
+    --editor-cell-bg-teal2: var(--teal-600);
+    --editor-cell-bg-teal3: var(--teal-500);
+    --editor-cell-bg-orange1: var(--deep-orange-900);
+    --editor-cell-bg-orange2: var(--deep-orange-700);
+    --editor-cell-bg-orange3: var(--deep-orange-500);
+    --editor-cell-bg-red1: var(--red-900);
+    --editor-cell-bg-red2: var(--red-700);
+    --editor-cell-bg-red3: var(--red-500);
+  }
+}
