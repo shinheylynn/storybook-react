@@ -1,9 +1,9 @@
+import React from 'react';
 import { automateStoriesFromProps, disableArgs } from '../utils';
 import StyledBadge from '../../src/components/styled-badge/medistream.jsx';
 
-// 반복적인 story 생성을 추상화했습니다.
-const componentName = StyledBadge.__docgenInfo.displayName;
-const initialTemplate = `<${componentName} v-bind="args">NEW</${componentName}>`;
+const componentName = StyledBadge.displayName || StyledBadge.name;
+const initialTemplate = `<${componentName} {...args}>NEW</${componentName}>`;
 const { Playground, color, size, shape, rounded } = automateStoriesFromProps(StyledBadge, initialTemplate);
 
 // Prop의 기본적인 행위를 정의합니다.
