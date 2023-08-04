@@ -11,10 +11,7 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
-  "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@storybook/addon-a11y": "^7.0.8",
     "@storybook/addon-essentials": "^7.1.1",
@@ -35,6 +32,9 @@
     "eslint-plugin-react-refresh": "^0.4.3",
     "eslint-plugin-storybook": "^0.6.13",
     "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.14.2",
     "sass": "^1.64.2",
     "storybook": "^7.1.1",
     "vite": "^4.4.5"
