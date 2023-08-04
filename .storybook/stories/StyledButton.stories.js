@@ -11,34 +11,84 @@ Playground.args = {
   loading: false,
 };
 
-const size = (props) => React.createElement(StyledButton, { size: props.size });
+const size = Playground.bind({});
 size.args = {
   size: 'x-large',
 };
+// 사용하지 않을 Prop의 경우 아래와 같이 설정해줍니다.
+// 변수명과 동일한 Prop을 제외한 나머지 Prop은 control과 table에서 사용하지 않도록 해줍니다.
+size.argTypes = {
+  width: { table: { disable: true } },
+  color: { table: { disable: true } },
+  outlined: { table: { disable: true } },
+  disabled: { table: { disable: true } },
+  loading: { table: { disable: true } },
+  Type: { table: { disable: true } },
+};
 
-const width = (props) => React.createElement(StyledButton, { width: props.width });
+const width = Playground.bind({});
 width.args = {
   width: 200,
 };
+width.argTypes = {
+  size: { table: { disable: true } },
+  color: { table: { disable: true } },
+  outlined: { table: { disable: true } },
+  disabled: { table: { disable: true } },
+  loading: { table: { disable: true } },
+  Type: { table: { disable: true } },
+};
 
-const color = (props) => React.createElement(StyledButton, { color: props.color });
+const color = Playground.bind({});
 color.args = {
   color: 'secondary',
 };
+color.argTypes = {
+  width: { table: { disable: true } },
+  size: { table: { disable: true } },
+  outlined: { table: { disable: true } },
+  disabled: { table: { disable: true } },
+  loading: { table: { disable: true } },
+  Type: { table: { disable: true } },
+};
 
-const outlined = (props) => React.createElement(StyledButton, { outlined: props.outlined });
+const outlined = Playground.bind({});
 outlined.args = {
   outlined: true,
 };
+outlined.argTypes = {
+  width: { table: { disable: true } },
+  color: { table: { disable: true } },
+  size: { table: { disable: true } },
+  disabled: { table: { disable: true } },
+  loading: { table: { disable: true } },
+  Type: { table: { disable: true } },
+};
 
-const disabled = (props) => React.createElement(StyledButton, { disabled: props.disabled });
+const disabled = Playground.bind({});
 disabled.args = {
   disabled: true,
 };
+disabled.argTypes = {
+  width: { table: { disable: true } },
+  color: { table: { disable: true } },
+  outlined: { table: { disable: true } },
+  size: { table: { disable: true } },
+  loading: { table: { disable: true } },
+  Type: { table: { disable: true } },
+};
 
-const loading = (props) => React.createElement(StyledButton, { loading: props.loading });
+const loading = Playground.bind({});
 loading.args = {
   loading: true,
+};
+loading.argTypes = {
+  width: { table: { disable: true } },
+  color: { table: { disable: true } },
+  outlined: { table: { disable: true } },
+  disabled: { table: { disable: true } },
+  size: { table: { disable: true } },
+  Type: { table: { disable: true } },
 };
 
 // Prop 값 타입과 입력 UI 를 정의합니다.
