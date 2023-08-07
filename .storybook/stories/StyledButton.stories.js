@@ -11,84 +11,59 @@ Playground.args = {
   loading: false,
 };
 
+const argsNames = Object.keys(StyledButton.__docgenInfo.props);
+console.log(argsNames);
+
+const disableUnusedArgs = (argsNames, usedArg) => {
+  return argsNames.reduce((disabledArgs, currentArg) => {
+    if (currentArg === usedArg) return disabledArgs;
+    return {
+      ...disabledArgs,
+      [currentArg]: { table: { disable: true } },
+    };
+  }, {});
+};
+
 const size = Playground.bind({});
+size.argTypes = disableUnusedArgs(argsNames, 'size');
+
+const width = Playground.bind({});
+width.argTypes = disableUnusedArgs(argsNames, 'width');
+
+const color = Playground.bind({});
+color.argTypes = disableUnusedArgs(argsNames, 'color');
+
+const outlined = Playground.bind({});
+outlined.argTypes = disableUnusedArgs(argsNames, 'outlined');
+
+const disabled = Playground.bind({});
+disabled.argTypes = disableUnusedArgs(argsNames, 'disabled');
+
+const loading = Playground.bind({});
+loading.argTypes = disableUnusedArgs(argsNames, 'loading');
+
 size.args = {
   size: 'x-large',
 };
-// 사용하지 않을 Prop의 경우 아래와 같이 설정해줍니다.
-// 변수명과 동일한 Prop을 제외한 나머지 Prop은 control과 table에서 사용하지 않도록 해줍니다.
-size.argTypes = {
-  width: { table: { disable: true } },
-  color: { table: { disable: true } },
-  outlined: { table: { disable: true } },
-  disabled: { table: { disable: true } },
-  loading: { table: { disable: true } },
-  Type: { table: { disable: true } },
-};
 
-const width = Playground.bind({});
 width.args = {
   width: 200,
 };
-width.argTypes = {
-  size: { table: { disable: true } },
-  color: { table: { disable: true } },
-  outlined: { table: { disable: true } },
-  disabled: { table: { disable: true } },
-  loading: { table: { disable: true } },
-  Type: { table: { disable: true } },
-};
 
-const color = Playground.bind({});
 color.args = {
   color: 'secondary',
 };
-color.argTypes = {
-  width: { table: { disable: true } },
-  size: { table: { disable: true } },
-  outlined: { table: { disable: true } },
-  disabled: { table: { disable: true } },
-  loading: { table: { disable: true } },
-  Type: { table: { disable: true } },
-};
 
-const outlined = Playground.bind({});
 outlined.args = {
   outlined: true,
 };
-outlined.argTypes = {
-  width: { table: { disable: true } },
-  color: { table: { disable: true } },
-  size: { table: { disable: true } },
-  disabled: { table: { disable: true } },
-  loading: { table: { disable: true } },
-  Type: { table: { disable: true } },
-};
 
-const disabled = Playground.bind({});
 disabled.args = {
   disabled: true,
 };
-disabled.argTypes = {
-  width: { table: { disable: true } },
-  color: { table: { disable: true } },
-  outlined: { table: { disable: true } },
-  size: { table: { disable: true } },
-  loading: { table: { disable: true } },
-  Type: { table: { disable: true } },
-};
 
-const loading = Playground.bind({});
 loading.args = {
   loading: true,
-};
-loading.argTypes = {
-  width: { table: { disable: true } },
-  color: { table: { disable: true } },
-  outlined: { table: { disable: true } },
-  disabled: { table: { disable: true } },
-  size: { table: { disable: true } },
-  Type: { table: { disable: true } },
 };
 
 // Prop 값 타입과 입력 UI 를 정의합니다.
