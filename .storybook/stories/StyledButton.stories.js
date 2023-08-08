@@ -1,19 +1,6 @@
 import React from 'react';
 import { StyledButton } from '../../src/components/styled-button/medistream';
 
-const Playground = (props) => React.createElement(StyledButton, props);
-Playground.args = {
-  width: 'auto',
-  size: 'medium',
-  color: 'primary',
-  outlined: false,
-  disabled: false,
-  loading: false,
-};
-
-const argsNames = Object.keys(StyledButton.__docgenInfo.props);
-console.log(argsNames);
-
 const disableUnusedArgs = (argsNames, usedArg) => {
   return argsNames.reduce((disabledArgs, currentArg) => {
     if (currentArg === usedArg) return disabledArgs;
@@ -24,23 +11,31 @@ const disableUnusedArgs = (argsNames, usedArg) => {
   }, {});
 };
 
-const size = Playground.bind({});
-size.argTypes = disableUnusedArgs(argsNames, 'size');
+const automateStoriesFromProps = (component) => {
+  const Playground = (args) => React.createElement(StyledButton, args);
+  const argsNames = Object.keys(component.__docgenInfo.props);
+  const stories = {};
 
-const width = Playground.bind({});
-width.argTypes = disableUnusedArgs(argsNames, 'width');
+  argsNames.forEach((argName) => {
+    stories[argName] = Playground.bind({});
+    stories[argName].argTypes = disableUnusedArgs(argsNames, argName);
+  });
 
-const color = Playground.bind({});
-color.argTypes = disableUnusedArgs(argsNames, 'color');
+  stories['Playground'] = Playground;
 
-const outlined = Playground.bind({});
-outlined.argTypes = disableUnusedArgs(argsNames, 'outlined');
+  return stories;
+};
 
-const disabled = Playground.bind({});
-disabled.argTypes = disableUnusedArgs(argsNames, 'disabled');
+const { Playground, size, width, color, outlined, disabled, loading } = automateStoriesFromProps(StyledButton);
 
-const loading = Playground.bind({});
-loading.argTypes = disableUnusedArgs(argsNames, 'loading');
+Playground.args = {
+  width: 'auto',
+  size: 'medium',
+  color: 'primary',
+  outlined: false,
+  disabled: false,
+  loading: false,
+};
 
 size.args = {
   size: 'x-large',
