@@ -1,8 +1,5 @@
 name: Build & Deploy Storybook
-on:
-  push:
-    branches: [dev]
-    paths: ['src/components/**']
+on: push
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
