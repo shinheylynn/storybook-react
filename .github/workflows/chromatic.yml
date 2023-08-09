@@ -1,20 +1,17 @@
-name: 'Chromatic'
-
-on: push
-
+name: Build & Deploy Storybook
+on:
+  push:
+    branches: [dev]
+    paths: ['src/components/**']
 jobs:
-  chromatic-deployment:
+  build-and-deploy:
     runs-on: ubuntu-latest
-    
     steps:
-      - uses: actions/checkout@v1
-      
-      - name: Install dependencies
-        run: yarn
-        working-directory: storybook-app
-
-      - name: Publish to Chromatic
-        uses: chromaui/action@v1
-        with:
-          workingDir: storybook-app
-          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+      - uses: actions/checkout@v2
+      - name: Install and Build 🔧
+        # This needs an Acces Token stored as "GH_TOKEN" 👇
+        run: |
+          npm install
+          npm run deploy-storybook -- --ci
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
