@@ -1,30 +1,31 @@
 import React from 'react';
 import { StyledButton } from '../../src/components/styled-button/medistream';
+import { automateStoriesFromProps } from '../utils/automateStorybook';
 
-const disableUnusedArgs = (argsNames, usedArg) => {
-  return argsNames.reduce((disabledArgs, currentArg) => {
-    if (currentArg === usedArg) return disabledArgs;
-    return {
-      ...disabledArgs,
-      [currentArg]: { table: { disable: true } },
-    };
-  }, {});
-};
+// const disableUnusedArgs = (argsNames, usedArg) => {
+//   return argsNames.reduce((disabledArgs, currentArg) => {
+//     if (currentArg === usedArg) return disabledArgs;
+//     return {
+//       ...disabledArgs,
+//       [currentArg]: { table: { disable: true } },
+//     };
+//   }, {});
+// };
 
-const automateStoriesFromProps = (component) => {
-  const Playground = (args) => React.createElement(StyledButton, args);
-  const argsNames = Object.keys(component.__docgenInfo.props);
-  const stories = {};
+// const automateStoriesFromProps = (component) => {
+//   const Playground = (args) => React.createElement(StyledButton, args);
+//   const argsNames = Object.keys(component.__docgenInfo.props);
+//   const stories = {};
 
-  argsNames.forEach((argName) => {
-    stories[argName] = Playground.bind({});
-    stories[argName].argTypes = disableUnusedArgs(argsNames, argName);
-  });
+//   argsNames.forEach((argName) => {
+//     stories[argName] = Playground.bind({});
+//     stories[argName].argTypes = disableUnusedArgs(argsNames, argName);
+//   });
 
-  stories['Playground'] = Playground;
+//   stories['Playground'] = Playground;
 
-  return stories;
-};
+//   return stories;
+// };
 
 const { Playground, size, width, color, outlined, disabled, loading } = automateStoriesFromProps(StyledButton);
 
