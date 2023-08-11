@@ -1,0 +1,138 @@
+.styled-radio {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.styled-radio input {
+  position: absolute;
+  left: -9999px;
+}
+
+.selected-icon,
+.un-selected,
+.selected {
+  position: relative;
+}
+
+.disabled {
+  cursor: not-allowed !important;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/* Transition animations */
+.fade-enter {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.fade-exit {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 300ms, transform 300ms;
+}
+
+/* Shared styles for the SVG content */
+.out-circle {
+  stroke-width: 1.5;
+}
+
+/* Additional styling based on your Vue.js code */
+.selected:hover::before,
+.un-selected:hover::before,
+.selected:focus-within::before,
+.un-selected:focus-within::before,
+.selected:active::before,
+.un-selected:active::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 130%;
+  height: 130%;
+  background-color: var(--blue-200);
+  border-radius: 50%;
+  content: '';
+  transform: translate(-50%, -50%);
+}
+
+.selected:hover::before,
+.un-selected:hover::before {
+  opacity: 0.25;
+}
+
+.un-selected:hover::before {
+  background-color: var(--blue-grey-200);
+}
+
+.un-selected.dark:hover::before {
+  background-color: var(--blue-grey-700);
+}
+
+.selected:focus-within::before,
+.un-selected:focus-within::before {
+  background-color: var(--blue-grey-200);
+  opacity: 0.5;
+}
+
+.selected.dark:focus-within::before,
+.un-selected.dark:focus-within::before {
+  background-color: var(--blue-grey-700);
+  opacity: 0.5;
+}
+
+.selected:active::before {
+  background-color: var(--blue-200);
+  opacity: 0.75;
+}
+
+.un-selected:active::before {
+  background-color: var(--blue-grey-200);
+  opacity: 0.75;
+}
+
+.selected.dark:active::before {
+  background-color: var(--blue-700);
+  opacity: 0.75;
+}
+
+.un-selected.dark:active::before {
+  background-color: var(--blue-grey-700);
+  opacity: 0.75;
+}
+
+.selected:hover .out-circle {
+  stroke: var(--blue-200);
+}
+
+.selected.dark:hover .out-circle {
+  stroke: var(--blue-700);
+}
+
+.un-selected:hover .out-circle,
+.un-selected:focus-within .out-circle {
+  stroke: var(--blue-grey-400);
+}
+
+.un-selected.dark:hover .out-circle,
+.un-selected.dark:focus-within .out-circle {
+  stroke: var(--blue-grey-700);
+}
+
+.un-selected:active .out-circle {
+  stroke: var(--blue-grey-500);
+}
+
+.un-selected.dark:active .out-circle {
+  stroke: var(--blue-grey-600);
+}
