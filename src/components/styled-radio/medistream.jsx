@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import './medistream.scss';
+import PropTypes from 'prop-types';
 
 export const StyledRadio = (props) => {
   const { Name, Val, Disabled, Width, Height, isDark = false, value, modelValue, onChange } = props;
@@ -54,4 +55,16 @@ export const StyledRadio = (props) => {
       </CSSTransition>
     </span>
   );
+};
+
+StyledRadio.propTypes = {
+  Name: PropTypes.string,
+  Val: PropTypes.string,
+  Disabled: PropTypes.bool,
+  Width: PropTypes.number,
+  Height: PropTypes.number,
+  isDark: PropTypes.bool,
+  value: PropTypes.string,
+  modelValue: PropTypes.string,
+  onChange: PropTypes.func,
 };
