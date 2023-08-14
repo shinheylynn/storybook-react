@@ -1,8 +1,6 @@
 import { automateStoriesFromProps } from '../utils/automateStorybook';
 import { StyledRadio } from '../../src/components/styled-radio/medistream.jsx';
 
-console.log(StyledRadio.__docgenInfo);
-
 const { Playground, value, Val, Width: WidthHeight } = automateStoriesFromProps(StyledRadio);
 
 const ownArgTypes = {
@@ -25,6 +23,24 @@ const ownArgTypes = {
       disable: true,
     },
   },
+  Disabled: {
+    control: false,
+    table: {
+      disable: true,
+    },
+  },
+  isDark: {
+    control: false,
+    table: {
+      disable: true,
+    },
+  },
+  onChange: {
+    control: false,
+    table: {
+      disable: true,
+    },
+  },
 };
 
 Playground.args = {
@@ -36,58 +52,60 @@ Playground.args = {
   disabled: false,
 };
 
-// value.args = {
-//   value: 'value',
-//   Val: 'different value',
-// };
+value.args = {
+  value: 'value',
+  Val: 'different value',
+};
+// to-do: prop 이름이 value (v-model) 대신 value로 표시되게 해야 함.
 
-// value.argTypes = {
-//   ...value.argTypes,
-//   Val: {
-//     table: {
-//       disable: false,
-//     },
-//   },
-// };
+value.argTypes = {
+  ...value.argTypes,
+  Val: {
+    table: {
+      disable: false,
+    },
+  },
+};
 
-// Val.args = {
-//   value: 'value',
-//   Val: 'different value',
-// };
-// Val.argTypes = {
-//   ...Val.argTypes,
-//   Val: {
-//     table: {
-//       disable: false,
-//     },
-//   },
-// };
+Val.args = {
+  value: 'value',
+  Val: 'different value',
+};
 
-// WidthHeight.args = {
-//   Width: 50,
-//   Height: 50,
-// };
+Val.argTypes = {
+  ...Val.argTypes,
+  Val: {
+    table: {
+      disable: false,
+    },
+  },
+};
 
-// WidthHeight.argTypes = {
-//   ...WidthHeight.argTypes,
-//   Height: {
-//     table: {
-//       disable: false,
-//     },
-//   },
-//   Val: {
-//     table: {
-//       disable: false,
-//     },
-//   },
-//   value: {
-//     table: {
-//       disable: false,
-//     },
-//   },
-// };
+WidthHeight.args = {
+  Width: 50,
+  Height: 50,
+};
 
-export { Playground };
+WidthHeight.argTypes = {
+  ...WidthHeight.argTypes,
+  Height: {
+    table: {
+      disable: false,
+    },
+  },
+  Val: {
+    table: {
+      disable: false,
+    },
+  },
+  value: {
+    table: {
+      disable: false,
+    },
+  },
+};
+
+export { Playground, value, Val, WidthHeight };
 
 export default {
   title: 'Controls/StyledRadio',
