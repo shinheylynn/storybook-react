@@ -1,5 +1,5 @@
 import React from 'react';
-import './medistream.scss';
+// import './medistream.scss';
 
 export const StyledBadge = ({ color = '#000000', size = 'medium', shape = 'embossed', rounded = false, children }) => {
   const sizes = {
@@ -52,10 +52,13 @@ export const StyledBadge = ({ color = '#000000', size = 'medium', shape = 'embos
     )}, 0.4)`,
   };
 
+  // to-do: tailwindcss와 style 정의 간 중복되는 표현은 없는지 확인 필요.
   return (
-    <mark className="styled-badge" style={badgeStyle}>
+    <mark
+      className="relative z-1 inline-block h-22 line-height-22 px-3 bg-transparent font-inter font-semibold text-white text-center tracking-wide align-middle"
+      style={badgeStyle}>
       {children} NEW
-      <span className="bg" style={bgStyle}></span>
+      <span className="absolute top-0 left-0 right-0 bottom-0" style={bgStyle}></span>
     </mark>
   );
 };

@@ -1,0 +1,43 @@
+.styled-tab {
+  display: inline-block;
+  position: relative;
+  label span {
+    display: inline-block;
+  }
+  &.block {
+    display: flex;
+    label {
+      flex: auto;
+    }
+    label span {
+      display: block;
+    }
+  }
+}
+.indicator-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+.indicator {
+  position: absolute;
+}
+label {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+label span {
+  overflow: hidden;
+  max-width: 100%;
+  font-size: 12px;
+  letter-spacing: -0.3px;
+  text-align: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+label input {
+  position: absolute;
+  left: -9999px;
+}
