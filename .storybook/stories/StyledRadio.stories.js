@@ -6,7 +6,7 @@ const { Playground, value, Val, Width: WidthHeight } = automateStoriesFromProps(
 const ownArgTypes = {
   value: {
     description: 'value와 Val이 같을 때 선택됩니다.',
-    name: 'value (v-model)',
+    name: 'value',
   },
   Val: {
     name: 'Val',
@@ -56,7 +56,6 @@ value.args = {
   value: 'value',
   Val: 'different value',
 };
-// to-do: prop 이름이 value (v-model) 대신 value로 표시되게 해야 함.
 
 value.argTypes = {
   ...value.argTypes,

@@ -45,6 +45,7 @@
     "vite": "^4.4.5"
   },
   "dependencies": {
+    "inticons": "^0.7.2",
     "react-transition-group": "^4.4.5"
   }
 }
